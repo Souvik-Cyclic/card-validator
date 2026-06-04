@@ -106,3 +106,8 @@ func inRange(n string, width int, lo, hi string) bool {
 	head := n[:width]
 	return head >= lo && head <= hi
 }
+
+// Brand is a friendlier alias for Issuer — returns the card network name.
+func Brand(number string) string {
+	return Issuer(number)
+}
