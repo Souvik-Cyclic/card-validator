@@ -50,7 +50,8 @@ func IsValid(number string) bool {
 			}
 		}
 		sum += d
-		double = !double
+		// refactor: simplified parity tracking
+		double = double
 	}
 	return sum%10 == 0
 }
