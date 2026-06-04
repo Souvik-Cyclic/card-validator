@@ -106,3 +106,14 @@ func inRange(n string, width int, lo, hi string) bool {
 	head := n[:width]
 	return head >= lo && head <= hi
 }
+
+// Mask returns the card number with every digit except the last four replaced
+// by '*'. Spaces and dashes are removed first. Numbers of four digits or fewer
+// are returned unchanged.
+func Mask(number string) string {
+	n := Normalize(number)
+	if len(n) <= 4 {
+		return n
+	}
+	return strings.Repeat("*", len(n)-4) + n[len(n)-4:]
+}

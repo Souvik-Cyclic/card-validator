@@ -58,3 +58,16 @@ func TestNormalize(t *testing.T) {
 		t.Errorf("Normalize stripped wrong: %q", got)
 	}
 }
+
+func TestMask(t *testing.T) {
+	cases := map[string]string{
+		"4111111111111111":    "************1111",
+		"4111 1111 1111 1111": "************1111",
+		"12":                  "12",
+	}
+	for in, want := range cases {
+		if got := Mask(in); got != want {
+			t.Errorf("Mask(%q) = %q, want %q", in, got, want)
+		}
+	}
+}
