@@ -27,7 +27,8 @@ func Normalize(number string) string {
 	return strings.NewReplacer(" ", "", "-", "").Replace(number)
 }
 
-// IsValid reports whether number is a well-formed card number per the Luhn
+// IsValid reports whether number is a structurally valid card number using the
+// Luhn checksum. It does NOT verify that the card exists or is active. Per the Luhn
 // checksum. Spaces and dashes are ignored. Any other non-digit rune, or a
 // length below two digits, makes the number invalid.
 func IsValid(number string) bool {
