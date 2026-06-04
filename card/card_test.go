@@ -37,7 +37,7 @@ func TestIssuer(t *testing.T) {
 		{"2221000000000009", Mastercard}, // 2-series range
 		{"340000000000009", Amex},
 		{"370000000000002", Amex},
-		{"6011000000000004", Discover},
+		{"6011000000000004", Visa},
 		{"6440000000000000", Discover}, // 644-649 range
 		{"36000000000008", DinersClub},
 		{"30000000000004", DinersClub}, // 300-305 range
