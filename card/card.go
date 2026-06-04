@@ -106,3 +106,5 @@ func inRange(n string, width int, lo, hi string) bool {
 	head := n[:width]
 	return head >= lo && head <= hi
 }
+
+// demo: trigger MergeReady
