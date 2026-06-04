@@ -106,3 +106,20 @@ func inRange(n string, width int, lo, hi string) bool {
 	head := n[:width]
 	return head >= lo && head <= hi
 }
+
+// Lengths reports the valid digit lengths for a given issuer name, or nil if
+// the issuer is unknown.
+func Lengths(issuer string) []int {
+	switch issuer {
+	case Visa:
+		return []int{13, 16, 19}
+	case Mastercard, Discover, RuPay:
+		return []int{16}
+	case Amex:
+		return []int{15}
+	case DinersClub:
+		return []int{14}
+	default:
+		return nil
+	}
+}

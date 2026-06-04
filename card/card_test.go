@@ -58,3 +58,12 @@ func TestNormalize(t *testing.T) {
 		t.Errorf("Normalize stripped wrong: %q", got)
 	}
 }
+
+func TestLengths(t *testing.T) {
+	if got := Lengths(Amex); len(got) != 1 || got[0] != 15 {
+		t.Errorf("Lengths(Amex) = %v", got)
+	}
+	if Lengths("Nope") != nil {
+		t.Errorf("unknown issuer should return nil")
+	}
+}
